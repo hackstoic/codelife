@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../static/css/common/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/blog/css/blog.css">
+    {% block extracss %} {% endblock %}
+    <script type="text/javascript" src="../../static/js/common/jquery-1.10.0.min.js"></script>
+    <script type="text/javascript" src="../../static/js/common/bootstrap.min.js"></script>
+    {% block extrajs %} {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <div class="blog-masthead">
+        <div class="container">
+            <nav class="blog-nav">
+                <!--<a href="/blog/"><img src="../static/blog/images/logo.jpg" alt="LOGO" name="logo" width="180" height="60" id="logo" /></a>-->
+                <a href="/blog" class="blog-nav-item active" >首页</a>
+                <!--<a href="/rss/" class="blog-nav-item">订阅</a>-->
+                <a href="#" class="blog-nav-item " onclick="alert('this column will be online in future!')">Python online docs</a>
+                <a href="#" class="blog-nav-item " onclick="alert('this column will be online in future!')">Books Recommand</a>
+                <a href="#" class="blog-nav-item " onclick="alert('this column will be online in future!')">Multimedia</a>
+                <a href="#" class="blog-nav-item " onclick="alert('this column will be online in future!')">Developer Websites Navi</a>
+                <a href="/blog/about/" class="blog-nav-item">关于</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="content_body">
+        {% block content_body %}{% endblock %}
+    </div>
+
+    <div class="blog-footer">
+        <div id="footer_logo"></div>
+        <div id="siteinfo">&copy; 2014 - 2015 Codelife Blog Powered by hackstoic</div>
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </div><!-- end .footer -->
+
+</body>
+</html>

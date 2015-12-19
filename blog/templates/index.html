@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% load chinese_cut %}
+
+{% block title %}Codelife{% endblock %}
+
+{% block content_body %}
+<div class="container">
+    <div class="blog-header">
+        <h1 class="blog-title">The CodeLife Blog</h1>
+        <p class="lead blog-description">记录和分享编程生涯的点点滴滴</p>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+            {% for blog in blogs %}
+            <div class="blog-post">
+                <div class="blog-post-title"><a href="/blog/detail/?id={{ blog.id }}">{{ blog.caption }}</a></div>
+                <!-- <div class="blog_title"><a href="/blog/#">{{ blog.caption }}</a></div> -->
+                <div class="blog-info1">
+            <span class="blog-info1-list">
+              <span class="li_small_1">分类：<a href="/blog/article?classified={{blog.classification}}">{{ blog.classification }}</a></span>
+              <span class="li_small_1">发表时间：{{ blog.publish_time|date:"Y-m-d H:i" }}</span>
+            </span>
+                </div>
+                <div class="blog-splitline"></div>
+                <div class="blog-description">{{ blog.content|striptags|chinese_cut:":100"|safe}}</div>
+                <div class="blog-info2">
+            <span class="blog-info2-list">
+              <span class="li_small_2">标签：{% for tag in blog.tags.all %}<a href="#">{{ tag.tag_name }}&nbsp &nbsp</a>{% endfor %}</span>
+            </span>
+                </div>
+            </div>
+           {% endfor %}
+
+        </div> <!-- /.blog-main -->
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+            <div class="sidebar-module sidebar-module-inset">
+                <h4>About Blog</h4>
+                <p>Hello I'm <em>hackstoic</em>，I'd like to share technology knowledge and viewpoint in this blog. 分享技术相关的内容，以及对技术和生活的一些拙见。</p>
+            </div>
+            <div class="sidebar-module">
+                <h4>Classified</h4>
+                <ol class="list-unstyled">
+                    {% for cls in cls_set %}
+                    <li><a href="/blog/article?classified={{cls}}">{{cls}}</a></li>
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="sidebar-module">
+                <h4>Archive</h4>
+                <ol class="list-unstyled">
+                    {% for ar_date in date_set %}
+                    <li><a href="/blog/article?archive_date={{ar_date}}">{{ar_date}}</a></li>
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="sidebar-module">
+                <h4>个人相关链接</h4>
+                <ol class="list-unstyled">
+                    <li><a href="http://weibo.com/u/5616283578" target="_blank">Weibo微博</a></li>
+                    <li><a href="https://github.com/hackstoic" target="_blank">GitHub</a></li>
+                    <li><a href="http://stackoverflow.com/users/4982426/hackstoic" target="_blank">Stackoverflow</a></li>
+                    <li><a href="http://www.zhihu.com/people/hack-stoic" target="_blank">知乎</a></li>
+                    <li><a href="http://blog.csdn.net/hackstoic" target="_blank">CSDN博客</a></li>
+                    <!-- <li><a href="http://weixin.sogou.com/gzh?openid=oIWsFt8YwvO6eWtx7Q0M7FPdOyE0" target="_blank">微信公众号1</a></li> -->
+                     <li><a href="http://weixin.sogou.com/gzh?openid=oIWsFt9_XkmM65rYnYNM1dFUSlLE" target="_blank">微信公众号</a></li>
+                </ol>
+            </div>
+        </div><!-- /.blog-sidebar -->
+    </div> <!-- /.row -->
+</div><!-- /.container -->
+{% endblock %}

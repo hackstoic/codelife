@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type"  name="viewport" content="width=device-width;initial-scale=1;text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../../static/css/common/bootstrap.min.css">
+    <script type="text/javascript" src="../../static/js/common/jquery-1.10.0.min.js"></script>
+    <script type="text/javascript" src="../../static/js/common/bootstrap.min.js"></script>
+    <title>Linux command online</title>
+</head>
+<body>
+<div class="container">
+    <div class="cmd_name well" style="margin-top:10px">
+        <h3>Linux命令：{{cmd_obj.name}}</h3>
+    </div>
+    <div class="detail">
+        <p>{{cmd_obj.content | safe}}</p>
+    </div>
+</div>
+
+</body>
+</html>

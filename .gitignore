@@ -1,0 +1,14 @@
+*.cfg
+*.pyc
+*.log
+sftp-config.json
+db.sqlite3
+/codelife/private.py
+/blog/migrations/
+/wechat/migrations/
+/static/wechat/
+/static/blog/
+/static/ebook/
+/static/medialib/
+/static/onlinedocs/
+/static/sitenav/

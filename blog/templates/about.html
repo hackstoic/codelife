@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block extrajs %}
+<script type="text/javascript">
+    $(function(){
+        $("nav.blog-nav a:eq(0)").removeClass("active");
+        $("nav.blog-nav a:eq(5)").addClass("active");
+    });
+</script>
+{% endblock %}
+{% block title %}About Me{% endblock %}
+{% block content_body %}
+<div class="blog-about">
+    <div class="intro">
+        <h1 class="page-title">关于我</h1>
+        {{about_me|safe}}
+
+<!--         <p class="message">
+            大家好，我叫Kevinstoic，是一名程序员。
+        </p>
+
+        <h3>我的经历</h3>
+
+        <ul>
+            <li>2008-2012 西北农林科技大学机电学院 </li>
+            <li>2012-2014 复旦大学微电子系 </li>
+            <li>2014-至今 在一家互联网公司做运维开发。</li>
+        </ul>
+
+        <h3>我的技能</h3>
+
+        <ul>
+            <li>编程语言：C, Python。钟爱Python</li>
+            <li>网站开发：略懂前端，会写css+js，会使用bootstrap， jquery，比较喜欢后端，通常使用Django框架，本博客也是用Django搭建的。</li>
+            <li>移动开发：做过移动开发的小项目，用Sencha Touch做的</li>
+            <li>IT技能： 平时做项目要接触的知识比较广泛，对Linux，Mysql，Celery，RabbitMQ,Kafka, Docker略懂一二</li>
+        </ul>
+
+        <h3>生活中的我</h3>
+
+        <ul>
+            <li>喜欢折腾各种新技术，喜欢乔帮主的那句名言Stay Hungry， Stay Foolish</li>
+            <li>喜欢各种球类运动，篮球，足球，乒乓，羽毛球，台球，不过水平比较渣</li>
+            <li>喜欢看电影和电视剧，有段时间比较狂热，经常熬夜追剧</li>
+            <li>喜欢思考，喜欢尝试各种新鲜事物</li>
+            <li>喜欢阅读，心理学，历史，政治，文学都有所涉猎</li>
+        </ul>
+
+        <h3>Contact</h3>
+
+        &nbsp&nbsp<p>联系方式：kevinstoic@126.com</p>
+
+        &nbsp&nbsp<p>微信公众号：linux-world</p> -->
+
+    </div>
+
+</div>
+
+{% endblock %}

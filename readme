@@ -1,0 +1,8 @@
+0. mkdir /opt/proj/django/ && sudo chown -R ubuntu:ubuntu /opt/proj/django/ &&git clone https://github.com/hackstoic/codelife.git
+1. pip install django python-dev  django-suit djangoueditor wechat-sdk uwsgi && apt-get install nginx mysql-server mysql-client python-mysqldb
+2. mkdir -p /var/log/codelife/  /var/log/uwsgi  && sudo chown -R ubuntu:ubuntu /var/log/codelife /var/log/codelife
+3. python manage.py syncdb
+4. python manage.py collectstatic
+5. nginx && nginx -s reload (please configure the nginx server first)
+6. uwsgi --ini codelife.ini
+
